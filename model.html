@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    window.document.body.style.margin = "0px";
+    window.document.body.style.padding = "0px";
+    const root = document.getElementById('root');
+    root.style.width = "100vw"
+    root.style.height = "100vh"
+    root.style.backgroundColor = "bisque"
+
+    function elementMaker(tagName, styles, textContent) {
+      const element = document.createElement(tagName);
+      for (let value in styles) {
+        element.style[value] = styles[value];
+      }
+      element.textContent = textContent;
+      return element
+    }
+    const style={
+      width:"30vw",
+      height:"50vh",
+      backgroundColor:"black",
+      padding:'10px'
+    }
+    const style1 ={
+      width : "80%",
+      height : "24px",
+      backgroundColor : "aliceblue",
+      margin : "10px",
+    }
+    const style2 = {
+      width : "80%",
+      height : "24px",
+      backgroundColor : "aqua",
+      margin : "10px"
+    }
+    const login = elementMaker("div",style)
+    root.appendChild(login);
+
+    login.appendChild(elementMaker("div",style1,"input"))
+    login.appendChild(elementMaker("div",style2,"submit"))
+    
+  </script>
+</body>
+</html>
