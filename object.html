@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const elementData = {
+      loginObj : {
+        width : "30vw",
+        height : "50vh",
+        padding : "10px",
+        backgroundColor : '#333'
+      },
+      inputObj : {
+        width : "80%",
+        height : "24px",
+        backgroundColor : "#D9D9D9"
+      },
+      btnObj : {
+        width : "80%",
+        height : "24px",
+        backgroundColor : "#9AFF92"
+      }
+    };
+
+    
+    function elementMaker(tagName, styles, textContent) {
+      const element = document.createElement(tagName);
+      for (let value in styles) {
+        element.style[value] = styles[value];
+      }
+      element.textContent = textContent;
+      return element;
+    }
+
+    const root = document.getElementById('root');
+    root.appendChild(elementMaker('div', elementData.loginObj));
+    root.children[0].id = 'login';
+    const login = document.getElementById('login');
+    login.appendChild(elementMaker('div', elementData.inputObj, 'input'));
+    login.appendChild(elementMaker('div', elementData.btnObj, 'submit'));
+    
+    window.localStorage.setItem('login',true)
+  </script>
+  
+</body>
+</html>
