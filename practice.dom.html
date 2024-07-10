@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    window.document.body.style.margin = "0px";
+    window.document.body.style.padding = "0px";
+
+    const root = document.getElementById('root');
+    root.style.width = "100vw"
+    root.style.height = "100vh"
+    root.style.backgroundColor = "bisque"
+
+    const login = document.createElement("div");
+    root.appendChild(login);
+    login.style.width = "30vw";
+    login.style.height = "50vh";
+    login.style.backgroundColor = "black";
+
+    const loginInput = document.createElement("div");
+    login.appendChild(loginInput);
+    loginInput.style.width = "80%";
+    loginInput.style.height = "24px";
+    loginInput.style.backgroundColor = "aliceblue";
+    loginInput.style.margin = "10px";
+    loginInput.textContent = "input"
+
+    const loginSubmit = document.createElement("div");
+    login.appendChild(loginSubmit);
+    loginSubmit.style.width = "80%";
+    loginSubmit.style.height = "24px";
+    loginSubmit.style.backgroundColor = "aqua";
+    loginSubmit.style.margin = "10px";
+    loginSubmit.textContent = "submit"
+
+    
+  </script>
+</body>
+
+</html>
